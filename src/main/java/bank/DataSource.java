@@ -15,7 +15,7 @@ public class DataSource {
     Connection connection = null;
     try{
       connection = DriverManager.getConnection(db_file);
-      System.out.println("we are connected");
+      // System.out.println("we are connected");
     } catch(SQLException e){
       e.printStackTrace();
     }
@@ -48,7 +48,7 @@ public class DataSource {
 
 
     public static void main(String[] args){
-      Customer customer = getCustomer("twest8o@frientfeed.com");
+      Customer customer = getCustomer("twest8o@friendfeed.com");
       System.out.println(customer.getName());
     }
   
