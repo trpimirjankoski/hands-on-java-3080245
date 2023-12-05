@@ -57,7 +57,14 @@ public class Account {
     if (amount<0){
       throw new AmountException("The withdrawal amount must be greater than 0");
     }
-    
+    else if(amount>getBalance()){
+      throw new AmountException("You don't have sufficient funds for this withdrawal");
+    }
+    else {
+      double newBalance = balance - amount;
+      setBalance(newBalance);
+      DataSource.updateAccountBalance(id, newBalance);
+    }
   }
 
 }
